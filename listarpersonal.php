@@ -13,7 +13,7 @@ include "conexion.php";
 
 
 $resultado = mysqli_query($conn, "select  personal.id_personal, personal.nombre_personal, personal.dni,  zonas.nombre_zona from personal_por_zona join personal on personal_por_zona.id_personal =personal.id_personal join zonas on personal_por_zona.id_zona = zonas.id_zona;");
-$personal=[];
+$personales=[];
 if ($resultado) {
     while ($personal = mysqli_fetch_assoc($resultado) ) {
         $personales [] = $personal;

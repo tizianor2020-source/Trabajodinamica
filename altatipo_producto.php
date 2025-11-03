@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Producto</title>
+    <title>Tipo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
     rel="stylesheet">
     <script
@@ -19,7 +19,7 @@ $nombre_tipo_producto=$_POST['nombre_tipo_producto'];
 
 if( !empty($nombre_tipo_producto) ){
  //   mysqli_query($conn,"insert into productos (nombre_producto, precio, stock, pais_origen) values ('$nombre_producto','$precio','$stock','$pais_origen')");
-$stmt = $conn->prepare("INSERT INTO tipo_productos (nombre_tipo_producto) VALUES (?)");
+$stmt = $conn->prepare("INSERT INTO tipo_producto (nombre_tipo_producto) VALUES (?)");
 $stmt->bind_param("s", $nombre_tipo_producto);
 $stmt->execute();
 $stmt->close();

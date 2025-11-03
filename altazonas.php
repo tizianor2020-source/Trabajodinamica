@@ -19,7 +19,7 @@ $nombre_zona=$_POST['nombre_zona'];
 
 if( !empty($nombre_zona)){
     //mysqli_query($conn,"insert into zonas (nombre_zona) values ('$nombre_zona')");
-    $stmt = $con->prepare("INSERT INTO zonas (nombre_zona) VALUES (?)");
+    $stmt = $conn->prepare("INSERT INTO zonas (nombre_zona) VALUES (?)");
 $stmt->bind_param("s", $nombre_zona);
 $stmt->execute();
 $stmt->close();
